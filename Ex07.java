@@ -1,36 +1,42 @@
 /******************************************************************************
-
-Tendo como entrada o total vendido por um funcionário no mês de abril, faça um algoritmo que calcule e mostre a sua comissão e seu salário bruto
-neste mês, sabendo que o seu salário base é R$1.200,00 e sua comissão é de 10% sobre o total vendido. 
-O funcionário só ganhará comissão se o valor total vendido for maior que R$2.000,00.
+ Implemente um código para aprovar
+empréstimo bancário. O código deve pedir 3 informações: valor do empréstimo,
+número de parcelas e salário do solicitante. Aprovar empréstimo caso o valor
+das parcelas representem no máximo 30% do salário do solicitante..
 
 *******************************************************************************/
-
 import java.util.Scanner;
-public class Ex07{
-    public static void main (String [] args){
-        double vtotal, salario, comissao, totalprodutos, vproduto;
-        Scanner ler = new Scanner(System.in);
-        
-        System.out.println("Quantos produtos foram vendidos?");
-        totalprodutos = ler.nextDouble();
-        System.out.println("Quantos reais cada produto foi vendido? ");
-        vproduto = ler.nextDouble();
-        System.out.println("Qual o seu salário?");
-        salario = ler.nextDouble();
-        
-        vtotal = totalprodutos * vproduto ;
-        comissao = (salario * 10) / 100;
-     
-        if(vtotal >= 2000)
-          System.out.println("Você recebeu cerca de " + comissao + " na venda de " + vtotal +"R$ de produtos"  );
-          
-        else 
-          System.out.println("Você fez a venda de "+ vtotal + "R$ de produtos");
-    }
-}
-	 
-	   
+public class Ex07
+{
+	public static void main(String[] args) {
+	    double emprestimo, parcelas, salario, pagar, vparcelas;
+	  Scanner ler = new Scanner (System.in);
 	  
-	   
-	   
+		System.out.println("Qual o seu salário?");
+		salario = ler.nextDouble();
+		System.out.println("Qual o valor do emprestimo?");
+		emprestimo = ler.nextDouble();
+		System.out.println("Quantas parcelas deseja pagar?");
+		parcelas = ler.nextDouble();
+		
+		vparcelas = emprestimo / parcelas;
+		pagar = salario * 0.30;
+		
+		
+		if (pagar >= vparcelas){
+		    System.out.println("Emprestimo aprovado");
+		} else {
+		    System.out.println("Emprestimo reprovado");
+		}
+		    
+		     
+		
+		
+		
+		    
+		
+		
+		
+		
+	}
+}
